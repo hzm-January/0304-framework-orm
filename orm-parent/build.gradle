@@ -1,0 +1,72 @@
+/**
+ * 依赖版本管理
+ */
+ext {
+    mybatisVersion = "3.4.6"
+    junitVersion = "4.12"
+    mybatis = [
+            mybatis: "org.mybatis:mybatis:$mybatisVersion",
+    ]
+    common = [
+            //junit: "group: '', name: 'junit', version: $junitVersion" --错误写法，识别不了
+            junit: "junit:junit:$junitVersion"
+    ]
+}
+
+/**
+ * 配置所有项目
+ */
+configure(allprojects) {
+
+    group 'houzm.accumulation.orm'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    compileJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+        options.encoding = "UTF-8"
+    }
+
+    compileTestJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+        options.encoding = "UTF-8"
+    }
+
+    repositories {
+        mavenLocal();
+        jcenter();
+        mavenCentral();
+    }
+    configurations.all {
+        // Check for updates every build
+        resolutionStrategy.cacheChangingModulesFor 0, "seconds"
+    }
+    dependencies {
+        testCompile(common.junit) {
+            //可添加额外配置
+
+        }
+    }
+
+}
+
+/**
+ * 配置子项目
+ */
+configure(subprojects) {
+
+}
+
+/***
+ * 配置根项目
+ */
+configure(rootProject) {
+    description = "orm accumulation"
+    /*dependencies {
+        compile(project(":orm-mybatis-common"))
+    }*/
+}
+
