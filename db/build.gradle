@@ -4,6 +4,10 @@
 ext {
     mybatisVersion = "3.4.6"
     junitVersion = "4.12"
+    mysqlVersion = "8.0.13"
+    db = [
+            mysql: "mysql:mysql-connector-java:$mysqlVersion"
+    ]
     mybatis = [
             mybatis: "org.mybatis:mybatis:$mybatisVersion",
     ]
@@ -19,7 +23,7 @@ ext {
 configure(allprojects) {
 
     group 'houzm.accumulation.orm'
-    version '1.0-SNAPSHOT'
+    version version
 
     apply plugin: 'java'
 
@@ -64,7 +68,7 @@ configure(subprojects) {
  * 配置根项目
  */
 configure(rootProject) {
-    description = "orm accumulation"
+    description = "database & orm accumulation"
     /*dependencies {
         compile(project(":orm-mybatis-common"))
     }*/

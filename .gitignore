@@ -20,7 +20,7 @@ activemq-data/
 classes/
 /build
 buildSrc/build
-/orm-*/build
+/db-*/build
 /src/asciidoc/build
 target/
 

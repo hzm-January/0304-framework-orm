@@ -1,5 +1,0 @@
-rootProject.name = 'orm-parent'
-
-//平级子模块
-includeFlat 'orm-mybatis-common'
-

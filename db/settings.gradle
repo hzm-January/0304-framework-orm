@@ -1,0 +1,5 @@
+rootProject.name = 'db'
+
+//平级子模块
+include 'db-mysql'
+
