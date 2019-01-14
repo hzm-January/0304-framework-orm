@@ -1,0 +1,12 @@
+# 插入数据
+insert into t_user(name) VALUE ('jack');
+insert into t_user(name) VALUE ('tom');
+insert into t_user(name) VALUE ('selina');
+
+# 查询数据
+select * from t_user;
+# mysql 8.+版本中删除了查询缓存功能，不再有sql_cache的功能
+# select sql_cache * from t_user where id = 1;
+
+# 更新数据
+update t_user set age=age+1 where id=1;
